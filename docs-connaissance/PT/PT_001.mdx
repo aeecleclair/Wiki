@@ -1,0 +1,141 @@
+---
+title : 'PT 001 : Rédiger en Markdown'
+---
+* __Auteur :__ Antonin ROUFFET (HEISER)
+* __Rédaction initiale :__ 16/03/2022
+* __Notation :__ ⚡⚡
+* __Prérequis :__ Markdown, éditeur de code (VS Code)
+
+
+
+
+La majorité des informations de cette PO sont tirées du [site officiel de Markdown](https://www.markdownguide.org/basic-syntax/#line-breaks), qu'il est conseillé d'aller voir au moins une fois pour voir les exemples et astuces présentés.
+
+
+
+## Mise en forme de texte
+Markdown sert essentiellement à mettre en forme du texte et ce de manière aéré et simplifié. En effet, si on compare au LaTex ou au HTML, il n'est pas nécessaire d'en cadrer son texte entre des balises. Pour annuler la fonctionnalité d'une syntaxe, il suffit de mettre un \\ devant.
+
+### Les sauts de ligne
+Pour sauter une ligne, un simple retour à la ligne dans le code ne suffit pas :
+````Markdown
+Bonjour
+Aurevoir
+````
+Affichera :  
+
+Bonjour\
+Aurevoir
+
+Il faut terminer la ligne par un double espace, avant le retour à la ligne, pour que ce dernier apparaisse effectivement.  
+Comme en LaTex, il est aussi possible de terminer la ligne par \\ pour réaliser un saut de ligne.
+
+### Les titres
+Il existe 6 niveaux de titre (de 1 à 6) que l'on définit avec des \# :
+
+````Markdown
+# Ceci est un titre de niveau 1
+### Ceci est un titre de niveau 3
+````
+
+**Remarque :** Il faut noter que le titre de niveau 1 est "plus général" que celui de niveau 3. De plus, il faut bien penser à mettre un espace après les \#.
+
+### Les emphases
+Il existe 3 emphases : __le gras__, *l'italique* et __*le gras en italique*__. Pour écrire comme ça, plusieurs syntaxes sont possibles :
+
+````Markdown
+*ceci est en italique*
+_ceci est aussi en italique_
+
+**ceci est en gras**
+__ceci est aussi en gras__
+
+___ceci est en gras et italique___
+__*ceci aussi est en gras et italique*__
+***ceci aussi***
+*_*pareil*_*
+````
+
+**Remarque :** Il faut faire attention à ne pas mettre d'espace entre les \* ou \_ et le mot à emphaser pour ne pas faire n'importe quoi avec la syntaxe.
+
+### Les listes
+Comme pour les emphases, il existes plusieurs syntaxes de listes qui ne sont pas à mélanger (afin que l'interpréteur y comprennne quelque chose).
+
+````Markdown
+* élément 1
+* élément 2
+    * élément 2.1
+    * élément 2.2
+* élément 3
+````
+le rendu de cette liste est le suivant :
+* élément 1
+* élément 2
+    * élément 2.1
+    * élément 2.2
+* élément 3  
+
+L'indentation réalisée permet de créer une sous-liste d'éléments.
+
+ Autres syntaxes possibles :
+
+````Markdown
++ élément 1
++ élément 2
++ élément 3
+````
+````Markdown
+- élément 1
+- élément 2
+- élément 3
+````
+
+#"# Ajout de commentaire
+Rien de mieux un qu'un bloc de citation pour écrire des commentaires. Il suffit de commencer une nouvelle ligne avec \> puis d'écrire :
+````Markdown
+> Ceci est un commentaire
+````
+Affichera :
+
+> Ceci est un commentaire
+
+## Ajout de code, d'image et d'hyperlien
+### Ajout de code
+Pour ajouter du code, on va encadrer le code avec ```` (4 accents graves mais 3 suffisent) :
+```
+    ```Langage de programmation utilisé
+    mon code
+    ```
+```
+__Remarque :__ Si aucun langage n'est spécifié ou si le langage n'est pas reconnu par Markdown, le code ne sera pas coloré.
+
+Petit aperçu avec Python:  
+
+````Python
+for i in range(7) :
+    print ("Hello World")
+````
+
+À titre informatif, il peut être intéresssant d'aller faire un tour sur la page de [Mermaid](https://mermaid-js.github.io/mermaid/#/), qui permet nottament d'afficher des structures en arbre directement via une incrustation de code Markdown, comme par exemple :
+
+import { Mermaid } from 'mdx-mermaid/Mermaid';
+
+<Mermaid chart={`graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+`} />
+
+### Ajout d'une image
+Pour ajouter une image, on va utiliser la syntaxe suivante :
+````Markdown
+![XXX](mon_image.png)
+````
+mon_image.png est l'image à afficher et XXX sera sa référence. Elle devra être placé dans le même dossier que le fichier Markdown.
+
+### Ajout d'hyperlien
+Pour ajouter une hyperlien utilise la structure suivante :
+````Markdown
+[nom que prend le lien clickable](url_du_lien)
+````
