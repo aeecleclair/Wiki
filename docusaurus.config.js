@@ -6,21 +6,21 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Wiki ECLAIR',
+  title: 'Wiki Hyperion',
   tagline: 'Bravo le veau',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://wiki-hyperion.github.io',
+  baseUrl: '/Wiki/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/logo_sans_texte.svg',
-  organizationName: 'Anto-nain', // Usually your GitHub org/user name.
-  projectName: 'Wiki ECLAIR', // Usually your repo name.
-  //deployementBranch: 'gh-pages'
+  organizationName: 'aeecleclair', // Usually your GitHub org/user name.
+  projectName: 'Wiki', // Usually your repo name.
+  deploymentBranch: 'gh-pages',
 
   presets: [
     [
       'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
+      /* @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
           remarkPlugins: [require('mdx-mermaid')],
@@ -28,13 +28,13 @@ const config = {
           path: 'docs',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/aeecleclair/Wiki/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/aeecleclair/Wiki/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -69,7 +69,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Wiki ECLAIR', 
+        title: 'Wiki ÉCLAIR', 
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo_sans_texte.svg',
@@ -77,13 +77,13 @@ const config = {
         items: [
           {
             to: '/docs/presentation',
-            label: 'Guide du Wiki',
+            label: 'Utiliser ce Wiki',
             position: 'left',
             activeBaseRegex: `/docs/`,
           },
           {
-            to: '/docs-projet/presentation_DP',
-            label: 'Documentation ',
+            to: '/docs-projet/presentation_hyperion',
+            label: 'Hyperion',
             position: 'left',
             activeBaseRegex: `/docs-projet/`,
           },
@@ -93,9 +93,8 @@ const config = {
             position: 'left',
             activeBaseRegex: `/docs-connaissance/`,
           },          
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/aeecleclair',
             label: 'GitHub',
             position: 'right',
           },
@@ -104,15 +103,6 @@ const config = {
       footer: {
         style: 'dark',
         links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
           {
             title: 'Community',
             items: [
@@ -134,17 +124,13 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/aeecleclair',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} ÉCLAIR.`,
       },
       prism: {
         theme: lightCodeTheme,

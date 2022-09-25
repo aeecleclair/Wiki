@@ -25,14 +25,33 @@ function HomepageHeader() {
   );
 }
 
-export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+// export default function Home() {
+//   const {siteConfig} = useDocusaurusContext();
+//   return (
+//     <Layout
+//       title={`Hello from ${siteConfig.title}`}
+//       description="Description will go into a meta tag in <head />">
       
 
+//     </Layout>
+//   );
+// }
+
+export default function Hello() {
+  return (
+    <Layout title="Hello" description="Hello React Page">
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '50vh',
+          fontSize: '20px',
+        }}>
+        <p>
+          Modifiez <code>pages/index.js</code> et sauvegardez pour recharger.
+        </p>
+      </div>
     </Layout>
   );
 }
